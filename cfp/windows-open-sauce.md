@@ -7,8 +7,8 @@ Welcoming Windows to the neighborhood: Writing cross-platform first applications
 If you spend most of your day in the Mac / Linux world, you may not realize this but
 there are a lot of Windows developers moving into your neighborhood. Windows
 developers may have used to work in isolation, but not anymore thanks to the popularity of
-git, node and Docker. Not only is Microsoft is embracing open source,
-but enterprises are finally allowing developers to use open source libraries and tools.
+git, node and Docker. Not only is Microsoft embracing open source,
+but enterprises are finally allowing their developers to use open source libraries and tools.
 
 But here's the rub: many useful tools are still written "Unix first",
 half-heartedly shoehorning in Windows support later and that is turning away potential users.
@@ -23,11 +23,13 @@ conquer them.
 Carolyn is a software developer from Chicago, though one day she hopes
 to escape to the Pacific Northwest in search of faster internet, free-range kittens
 and respite from snow blowers. She loves all things automation, developer tools
-and anything that will make her fellow developers lives easier, so she's found a good home
+and anything that will make her fellow developers lives easier; so she's found a good home
 at Rackspace on the Developer Experience team. Like a grafted bonsai,
 her roots come from many places: happily developing C# applications on a Mac and deploying to Linux.
 
-## Agenda (40 minutes, 10 minutes for questions)
+## Agenda
+40 minutes, 10 minutes for questions
+
 * Speaker and Topic Introduction - 5 minutes
 * Cross-platform tools at Rackspace - 5 minutes
 * Rewriting the Docker Version Manager - 10 minutes
@@ -36,7 +38,7 @@ her roots come from many places: happily developing C# applications on a Mac and
 * Cross-platform Testing Tips - 5 minutes
 * Summary / Cheat Sheet - 5 minutes
 
-# Description
+# Proposal Extras
 
 ## Tags
 cross-platform windows go
@@ -78,7 +80,7 @@ and wanted to provide a great experience for all developers, regardless of OS.
 
 * Testing
   * We could really improve here! Right now it's all manual... :-(
-    * Single build, with subsequent jobs to test on each os.
+  * Single build, with subsequent jobs to test on each os.
 
 * Summary
   * env vars
