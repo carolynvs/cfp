@@ -1,3 +1,7 @@
+### Conference
+
+[GopherCon 2016 Proposal Guidelines](http://cfp.gophercon.com/events/gc16)
+
 ### Title (60 chars)
 
 Grow your users from an unlikely source: Windows developers
