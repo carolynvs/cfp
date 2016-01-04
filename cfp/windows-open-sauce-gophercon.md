@@ -7,9 +7,9 @@
 Grow your users from an unlikely source: Windows developers
 
 ### Abstract (600 chars)
-You may not realize it but there are a lot of Windows developers moving into your neighborhood. They are using, and contributing to, open source projects, even those that aren't just for Windows. But here's the rub: many tools are still written "Unix first", shoehorning in support later and this is costing them users.
+You may not realize it but there are a lot of Windows developers moving into your neighborhood. They are using and contributing to open source projects, even those that aren't just for Windows. But here's the rub: Often tools are written "Unix first", shoehorning Windows support in later.  This approach can shut out potential users.
 
-Lucky for us, Go has strong support for cross-platform development. So let's start writing cross-platform first and welcome our Windows neighbors. Learn some of the Windows quirks that you should take into account, and the Go goodies that will help you conquer them.
+Lucky for us, Go has strong support for cross-platform development. So let's start writing cross-platform first and welcome our Windows neighbors. Learn some of the Windows quirks that you should take into account, and the Go goodies to help you conquer them.
 
 ### Speaker bio (500 chars)
 Carolyn is a software developer from Chicago, though one day she hopes
