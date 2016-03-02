@@ -39,22 +39,153 @@
 		<div class="reveal">
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section data-markdown>
-					<script type="text/template">
-						## Introduction to Carina
+				<section>
+						<h1>Introduction to Carina</h1>
 
-						_Carolyn Van Slyck_
+						<p><img src="images/carina-logo.png" /></p>
+						<p>by Carolyn Van Slyck</p>
 
-						<small>[@carolynvs](http://twitter.com/carolynvs)</small>
-						<p>&nbsp;</p>
-						http://carolynvanslyck.com/talk/carina/lightning
-					</script>
+						<p><a href="http://carolynvanslyck.com/talk/carina/lightning">http://carolynvanslyck.com/talk/carina/lightning</a></p>
+
 				</section>
 
-				<section data-external="docker-mushroom.html"> </section>
-			 </section>
+				<section id="docker-mushroom">
+					<img src="images/whale.png" />
+					<img src="images/whale.png" />
+					<img src="images/whale.png" />
+					<img src="images/whale.png" />
+					<img src="images/mushroom.png" />
 
+					<aside class="notes">
+						<ul>
+							<li>Who knows Docker?</li>
+							<li>What does it make easier?</li>
+							<li>Who is using it RIGHT?</li>
+						</ul>
+					</aside>
+				</section>
 
+				<section>
+					<section id="above-the-whale">
+						<h2>Think above the whale</h2>
+
+						<p><img src="images/docker.png"/></p>
+
+						<aside class="notes">
+							<ul>
+								<li>Docker as a Service</li>
+								<li>Developer Friendly</li>
+								<li>App Focused / Fun Parts</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section id="vm-stack">
+						<h2>Virtual Machines</h2>
+						<img src="images/vm-layout.png" style="margin-top: -20px;"/>
+
+						<aside class="notes">
+							<ul>
+								<li>All my problem</li>
+								<li>Overhead</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section id="docker-stack">
+						<h2>Docker</h2>
+						<img src="images/docker-layout.png" />
+
+						<aside class="notes">
+							<ul>
+								<li>This is why Docker is cool</li>
+								<li>Some things are still my problem</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section id="carina-stack">
+						<h2>Carina</h2>
+						<img src="images/carina-layout.png"/>
+
+						<aside class="notes">
+							<ul>
+								<li>Just the application is my problem now</li>
+								<li>Again, above the whale</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+
+				<section id="bacon-driven-development">
+					<h2>Push Button &rarr; Receive Docker</h2>
+					<p><img src="images/push-button-bacon.png" style="border: none; box-shadow: none;" /></p>
+					<p>Signup at <a href="http://getcarina.com">getcarina.com</a></p>
+
+					<aside class="notes">
+						<ul>
+							<li>Email + SMS, no $</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section id="website">
+					<img src="images/carina-site.png" />
+
+					<aside class="notes">
+						<ul>
+							<li>What do you get (3x3, 4GB, 20GB)</li>
+							<li>Docker Swarm</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section id="whoa">
+					<h2>TTD - Time to Docker</h2>
+					<pre><code data-trim data-noescape>
+$ carina ls
+<span class="fragment">ClusterName     Flavor            Segments    AutoScale     Status
+mccluster       container1-4G     1           false         active
+playground      container1-4G     1           false         active</span>
+
+<span class="fragment">$ eval $(carina env mccluster)
+PS> carina env mccluster | iex</span>
+
+<span class="fragment">$ docker run --name whoa --detach --publish 80:8080 rackerlabs/whoa
+24c1bdc54427d50475c587aaa32a505c9d825aa7c7cc0b411835672d384e5f60</span>
+
+<span class="fragment">$ docker port whoa 8080
+172.99.78.29:80</span>
+
+<span class="fragment">$ curl $(docker port whoa 8080)
+🎉  Whoa!  🎉</span>
+					</pre></code>
+
+					<aside class="notes">
+						<ul>
+							<li>Magic Docker env vars</li>
+							<li>Supports Windows PowerShell and CMD too!</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section id="doing-the-dockers">
+					<h2>Doing the Dockers</h2>
+
+					<ul>
+						<li><a href="https://getcarina.com/docs/tutorials/multiple-wordpress-containers/" target="_blank">Host your personal website</a></li>
+						<li><a href="https://getcarina.com/docs/tutorials/minecraft/" target="_blank">Run a Minecraft server</a></li>
+						<li><a href="https://getcarina.com/docs/tutorials/publish-aspnet-to-carina/" target="_blank">Play with ASP.NET vNext</a></li>
+						<li><a href="https://getcarina.com/docs/tutorials/nginx-with-lets-encrypt/" target="_blank">Secure all the things with Let's Encrypt SSL</a></li>
+					</ul>
+				</section>
+
+				<section id="takeout">
+					<h2>Thank you</h2>
+
+					<p><img src="images/me.gif" width="120px"/></p>
+					<p><a href="http://twitter.com/carolynvs" target="_blank">@carolynvs</a></p>
+				</section>
 			</div>
 
 		</div>

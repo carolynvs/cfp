@@ -50,10 +50,11 @@ body {
   word-wrap: break-word; }
 
 .reveal h1 {
-  font-size: 2.5em; }
+  font-size: 2em;
+}
 
 .reveal h2 {
-  font-size: 1.6em; }
+  font-size: 1.5em; }
 
 .reveal h3 {
   font-size: 1.3em; }
@@ -224,9 +225,8 @@ body {
  *********************************************/
 .reveal section img {
   margin: 15px 0px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
+  border-radius: 10px;
+}
 
 .reveal section img.plain {
   border: 0;
