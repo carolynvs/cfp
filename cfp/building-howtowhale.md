@@ -3,25 +3,25 @@ Building the ultimate learning environment with Docker
 
 # Abstract (200 words)
 Docker is an exciting platform for running your application in production, but
-did you know that it can provide a better experience for your customers too? Give them
+did you know that it can provide a better experience for your users too? Give them
 a taste of your application with a personalize demo,
 jump-start the learning process with an interactive tutorial
 or bring your online documentation to life with live examples.
 
 Learn how howtowhale.com uses JupyterHub and Carina to teach Docker,
 with zero setup and immediate results. These are essential building blocks that
-you can use to build the ultimate learning environment for your customers.
+you can use to build the ultimate learning environment for your users.
 
 # Outline
 First, we will answer why Docker is a great fit for demos, tutorials and documentation.
 Next using howtowhale.com as an example, we will walk through the infrastructure
 and configuration necessary to create your own interactive, sandboxed user environments.
 Then we will do a quick demo of how to build a magic button that sets up your
-application for your customers.
+application for your users.
 
 # Takeaways
 * Come away with three ways to use Docker in non-traditional environments
-* See what goes into building on-demand interactive, isolated sandboxes for your customers
+* See what goes into building on-demand interactive, isolated sandboxes for your users
 * Download source code for working examples that you can build upon and customize
 
 # Tags
