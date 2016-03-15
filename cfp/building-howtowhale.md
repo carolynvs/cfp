@@ -4,30 +4,31 @@ Building the ultimate learning environment with Docker
 # Abstract (200 words)
 Docker is an exciting platform for running your application in production, but
 did you know that it can provide a better experience for your customers too? Give them
-a taste of your application with a personalize demo,
+a taste of your application with a personalized demo,
 jump-start the learning process with an interactive tutorial
 or bring your online documentation to life with live examples.
 
-Learn how howtowhale.com uses JupyterHub and Carina to teach Docker,
-with zero setup and immediate results. These are essential building blocks that
-you can use to build the ultimate learning environment for your customers.
+See how I used JupyterHub and Docker Swarm to teach others Docker,
+with zero setup and immediate results. With these essential building blocks,
+you too can create the ultimate learning environment for your customers.
 
 # Outline
-First, we will answer why Docker is a great fit for demos, tutorials and documentation.
-Next using howtowhale.com as an example, we will walk through the infrastructure
-and configuration necessary to create your own interactive, sandboxed user environments.
+First, we will examine why Docker is a great fit for demos, tutorials and documentation.
+Next a walkthrough of the Docker Swarm infrastructure and JupyterHub configuration
+necessary to create your own interactive, sandboxed user environments.
 Then we will do a quick demo of how to build a magic button that sets up your
 application for your customers.
 
 # Takeaways
-* Come away with three ways to use Docker in non-traditional environments
-* See what goes into building on-demand interactive, isolated sandboxes for your customers
-* Download source code for working examples that you can build upon and customize
+* Learn three ways to use Docker in non-traditional environments.
+* Explore what goes into building on-demand interactive, isolated sandboxes for your customers.
+* Download source code for working examples that you can build upon and customize.
 
 # Tags
-1. learning
+1. swarm
 2. jupyterhub
 3. carina
+4. learning
 
 # Speaker bio
 Carolyn is a software developer from Chicago, though one day she hopes
@@ -37,8 +38,11 @@ and anything that will make her fellow developers lives easier; so she's found a
 at Rackspace on the Developer Experience team where she has been developing
 developer tools and tutorials for Docker and Carina.
 
+<hr />
 
-## Outline (details)
+Everything below is not part of the CFP.
+
+## Personal Notes
 * Docker is the perfect sandbox for demos
   * It's not uncommon to see a gif showing how something works
   * Even better is a live demo
