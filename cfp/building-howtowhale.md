@@ -76,3 +76,23 @@ Everything below is not part of the CFP.
 * Making your own Try Foo
   * Doesn't require the user to know docker at all
   * Walk through how to do the same thing, e.g. a button to setup word press for the user
+
+## Video Pitch
+https://youtu.be/uzg87FDJIeM
+* introduce yourself
+  * Carina: containers as a service
+  * think of it as push button docker
+* docker transformed developer and ops experience
+* untapped potential improve user experience
+* ultimate learning tool
+  * Give users taste of my product with a personalized demo,
+  * jump-start the learning process with an interactive tutorial
+  * bring my documentation to life with live examples
+* after teaching docker
+  * common hurdles
+  * most annoying is that I have to install it before I can learn it
+* This inspired howtowhale.com
+  * zero setup, terminal in browser
+  * guides you through an interactive tutorial
+  * my own personal swarm cluster
+* We'll walk through how I built this with JupyterHub and Docker Swarm, so that you too can create the ultimate learning environment for your users.
