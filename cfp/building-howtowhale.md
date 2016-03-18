@@ -2,22 +2,12 @@
 Building the ultimate learning environment with Docker
 
 # Abstract (200 words)
-Docker is an exciting platform for running your application in production, but
-did you know that it can provide a better experience for your customers too? Give them
-a taste of your application with a personalized demo,
-jump-start the learning process with an interactive tutorial
-or bring your online documentation to life with live examples.
+Docker is an exciting platform for running your application in production, but did you know that it can provide a better experience for your customers too? Give them a taste of your application with a personalized demo, jump-start the learning process with an interactive tutorial or bring your online documentation to life with live examples.
 
-See how I used JupyterHub and Docker Swarm to teach others Docker,
-with zero setup and immediate results. With these essential building blocks,
-you too can create the ultimate learning environment for your customers.
+See how I used JupyterHub and Docker Swarm to teach others Docker, with zero setup and immediate results. With these essential building blocks, you too can create the ultimate learning environment for your customers.
 
 # Outline
-First, we will examine why Docker is a great fit for demos, tutorials and documentation.
-Next a walkthrough of the Docker Swarm infrastructure and JupyterHub configuration
-necessary to create your own interactive, sandboxed user environments.
-Then we will do a quick demo of how to build a magic button that sets up your
-application for your customers.
+First, we will examine why Docker is a great fit for demos, tutorials and documentation. Next a walkthrough of the Docker Swarm infrastructure and JupyterHub configuration necessary to create your own interactive, sandboxed user environments. Then we will do a quick demo of how to build a magic button that sets up your application for your customers.
 
 # Takeaways
 * Learn three ways to use Docker in non-traditional environments.
@@ -31,12 +21,7 @@ application for your customers.
 4. learning
 
 # Speaker bio
-Carolyn is a software developer from Chicago, though one day she hopes
-to escape to the Pacific Northwest in search of faster internet, free-range kittens
-and respite from snow blowers. She loves all things automation, developer tools
-and anything that will make her fellow developers lives easier; so she's found a good home
-at Rackspace on the Developer Experience team where she has been developing
-developer tools and tutorials for Docker and Carina.
+Carolyn is a software developer from Chicago, though one day she hopes to escape to the Pacific Northwest in search of faster internet, free-range kittens and respite from snow blowers. She loves all things automation, developer tools and anything that will make her fellow developers lives easier; so she's found a good home at Rackspace on the Developer Experience team where she has been writing developer tools and tutorials for Docker and Carina.
 
 <hr />
 
