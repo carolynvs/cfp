@@ -26,5 +26,4 @@ This is an interactive workshop, so bring your laptop.
 * Sara Safavi
 
 ## Facilitator Diversity (1,000 characters)
-How do your chosen facilitators add to the diversity to your submission?
-!!!TODO!!!
+As facilitators, we come from different geographic regions of the United States. Carolyn and Sara are experienced developers while Anne’s focus area has been in developer documentation. Sara has worked in government agencies on GIS data. Carolyn has worked at Microsoft. Anne has worked at small software companies. The three of us have shared an employer but have a wide breadth and depth of experiences which bring us to this point in our careers.
