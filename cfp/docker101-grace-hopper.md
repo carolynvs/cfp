@@ -2,7 +2,7 @@
 See [docker101-grace-hopper.docx](docker101-grace-hopper.docx) for the meat of the proposal. The rest here is just what needs to be entered in the web form.
 
 # Title (150 characters)
-Docker 101: Run your first Docker container today
+Docker 101: Run Your First Docker Container Today
 
 # Abstract (400 characters)
 Docker helps you package an application with its dependencies, develop and deploy it anywhere. Learn about this up-and-coming technology and why you would want to use it.
