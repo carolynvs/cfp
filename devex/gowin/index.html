@@ -123,8 +123,12 @@
 				</section>
 
 				<section id="maslow">
-					<h2>Priorities</h2>
-					<img src="images/win-hierarchy-of-needs.png" alt="1. cross-platform code, 2. user experience, 3. contributors, 4. ci" height="400px" />
+					<img src="images/pyramid.png" alt="1. cross-platform code, 2. user experience, 3. contributors, 4. ci" height="400px" />
+				</section>
+
+				<section id="code">
+					<h2>Cross-Platform Code</h2>
+					<img src="images/pyramid-code.png" alt="1. cross-platform code, 2. user experience, 3. contributors, 4. ci" height="400px" />
 				</section>
 
 				<section id="go-build">
@@ -139,7 +143,8 @@ github.com/me/magic
 					<p><small>I prefer matching the output of <code class="inline">uname -s</code> and <code class="inline">uname -a</code> to make scripting easier</small></p>
 
 					<aside class="notes">
-						Note this is just the first step!
+						This is why I love go over other languages!<br/>
+						Buuuut this is just the first step...
 					</aside>
 				</section>
 
@@ -185,7 +190,7 @@ func getUserHomeDir() string {
 <pre><code class="go" data-trim data-noescape style="font-size: 0.9em">
 // +build windows
 
-const fileExtension string = ".exe"
+const fileExtension string = ".ps1"
 
 func getUserHomeDir() string {
   return os.Getenv("USERPROFILE")
@@ -206,6 +211,7 @@ func getUserHomeDir() string {
 							<tr><td>PATH <code class="inline">:</code></td><td>PATH <code class="inline">;</code></td></tr>
 							<tr><td>SHELL</td><td>💩</td></tr>
 							<tr><td>TMPDIR</td><td>TMP/TEMP</td></tr>
+							<tr><td>-</td><td>PATHEXT ✨</td></tr>
 						</tbody>
 					</table>
 				</section>
@@ -214,9 +220,10 @@ func getUserHomeDir() string {
 					<h2>File Paths</h2>
 
 					<ul>
-						<li>Stick to <code class="inline">path/filepath</code></li>
-						<li>Windows is usually okay with <code class="inline">/</code>'s regardless</li>
+						<li>Stick with <code class="inline">import "path/filepath"</code></li>
+						<li>Windows is mostly cool with <code class="inline">/</code> or <code class="inline">\</code></li>
 						<li>Use quoted paths to deal with whitespace in paths</li>
+						<li>Windows 10 has removed the 260 char max file path limit</li>
 					</ul>
 
 					<aside class="notes">
@@ -225,8 +232,60 @@ func getUserHomeDir() string {
 					</aside>
 				</section>
 
-				<section id="scripts">
-					<h2>Scripting</h2>
+				<section id="ux">
+					<h2>User Experience</h2>
+					<img src="images/pyramid-ux.png" alt="1. cross-platform code, 2. user experience, 3. contributors, 4. ci" height="400px" />
+
+					<aside class="notes">
+						* documentation (long line continuation, cmd/bash/powershell)
+						* installation (choco)
+						* cli - prefer with posix style arguments, `git commit --message foobar`
+						* logging
+					</aside>
+				</section>
+
+				<section>
+					<section id="doc">
+						<h2>Documentation</h2>
+
+						<blockquote>
+							The pain of maintaining a project is often inversely proportional to the value placed on documentation.
+						</blockquote>
+					</section>
+
+					<section id="shells">
+						<h2>Windows Shells</h2>
+
+						<table style="white-space: nowrap">
+							<tr><th>CMD</th><th>PowerShell</th><th>Bash</th></tr>
+							<tr>
+								<td>
+									<p>👍 Familiar to users</p>
+									<p>👎 Limited funcionality</p>
+								</td>
+							<td>
+								<p>👍 Quirky but powerful</p>
+								<p>👎 Many versions</p>
+							</td>
+							<td>
+								<p>👍 Familiar to devs</p>
+								<p>❓ Scripting reuse</p>
+								<p>👎 Fewer users</p>
+							</td></tr>
+						</table>
+
+						<p style="font-size: 0.9em">If you can only support one, go with PowerShell v4.0</p>
+					</section>
+				</section>
+
+				<section id="contrib">
+					<h2>Contributors</h2>
+					<img src="images/pyramid-contrib.png" alt="1. cross-platform code, 2. user experience, 3. contributors, 4. ci" height="400px" />
+				</section>
+
+				<section id="ci">
+					<h2>Continuous Integration</h2>
+					<img src="images/pyramid-ci.png" alt="1. cross-platform code, 2. user experience, 3. contributors, 4. ci" height="400px" />
 				</section>
 
 				<section id="takeout">
