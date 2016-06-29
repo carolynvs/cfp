@@ -179,7 +179,7 @@ func getMagicFilePath() string {
 <pre><code class="go" data-trim data-noescape style="font-size: 0.9em">
 // +build !windows
 
-const fileExtension string = ""
+const fileExtension string = ".sh"
 
 func getUserHomeDir() string {
   return os.Getenv("HOME")
@@ -265,13 +265,13 @@ func getUserHomeDir() string {
 <pre><code class="xml" data-trim data-noescape>
 &lt;package&gt;
   &lt;metadata&gt;
-    &lt;id&gt;foobar&lt;/id&gt;
+    &lt;id&gt;magic&lt;/id&gt;
     &lt;version&gt;$version$&lt;/version&gt;
     &lt;authors&gt;Carolyn Van Slyck&lt;/authors&gt;
     &lt;description&gt;It does both stuff _and_ things!&lt;/description&gt;
   &lt;/metadata&gt;
   &lt;files&gt;
-    &lt;file src=&quot;foobar.exe&quot; /&gt;
+    &lt;file src=&quot;magic.exe&quot; /&gt;
   &lt;/files&gt;
 &lt;/package&gt;
 </code></pre>
