@@ -153,12 +153,12 @@ github.com/me/magic
 						<h2>Conditional Compilation</h2>
 
 						<ul>
-							<li>main.go</li>
-							<li>main.386.go - <code class="inline">// +build 386</code></li>
-							<li>main.amd64.go - <code class="inline">// +build amd64</code></li>
-							<li>main.darwin.go - <code class="inline">// +build darwin</code></li>
-							<li>main.nix.go - <code class="inline">// +build !windows</code></li>
-							<li>main.windows.go - <code class="inline">// +build windows</code></li>
+							<li>magic.go</li>
+							<li>magic.386.go - <code class="go inline"><span class="hljs-comment">// +build 386</span></code></li>
+							<li>magic.amd64.go - <code class="go inline"><span class="hljs-comment">// +build amd64</span></code></li>
+							<li>magic.darwin.go - <code class="go inline"><span class="hljs-comment">// +build darwin</span></code></li>
+							<li>magic.nix.go - <code class="go inline"><span class="hljs-comment">// +build !windows</span></code></li>
+							<li>magic.windows.go - <code class="go inline"><span class="hljs-comment">// +build windows</span></code></li>
 						</ul>
 
 						<aside class="notes">
@@ -168,14 +168,14 @@ github.com/me/magic
 						</aside>
 					</section>
 					<section id="go-files-example" style="font-size: 0.9em">
-						<p style="text-align: left">main.go</p>
+						<p style="text-align: left">magic.go</p>
 <pre><code class="go" data-trim data-noescape>
 func getMagicFilePath() string {
   return filepath.Join(getUserHomeDir, "magic" + fileExtension)
 }
 </code></pre>
 
-						<p style="text-align: left">main.nix.go</p>
+						<p style="text-align: left">magic.nix.go</p>
 <pre><code class="go" data-trim data-noescape style="font-size: 0.9em">
 // +build !windows
 
@@ -186,7 +186,7 @@ func getUserHomeDir() string {
 }
 </code></pre>
 
-						<p style="text-align: left">main.windows.go</p>
+						<p style="text-align: left">magic.windows.go</p>
 <pre><code class="go" data-trim data-noescape style="font-size: 0.9em">
 // +build windows
 
@@ -206,12 +206,12 @@ func getUserHomeDir() string {
 						<thead>
 							<tr><th>*nix</th><th>windows</th></tr>
 						</thead>
-						<tbody>
-							<tr><td>HOME</td><td>USERPROFILE <br/> (LOCAL)APPDATA</td></tr>
-							<tr><td>PATH <code class="inline">:</code></td><td>PATH <code class="inline">;</code></td></tr>
-							<tr><td>SHELL</td><td>💩</td></tr>
-							<tr><td>TMPDIR</td><td>TMP/TEMP</td></tr>
-							<tr><td>-</td><td>PATHEXT ✨</td></tr>
+						<tbody class="envvar">
+							<tr><td>home</td><td>userprofile <br/> (local)appdata</td></tr>
+							<tr><td>path <code class="inline">:</code></td><td>path <code class="inline">;</code></td></tr>
+							<tr><td>shell</td><td>💩</td></tr>
+							<tr><td>tmpdir</td><td>tmp/temp</td></tr>
+							<tr><td>-</td><td>pathext ✨</td></tr>
 						</tbody>
 					</table>
 				</section>
@@ -223,7 +223,7 @@ func getUserHomeDir() string {
 						<li>Stick with <code class="inline">import "path/filepath"</code></li>
 						<li>Windows is mostly cool with <code class="inline">/</code> or <code class="inline">\</code></li>
 						<li>Use quoted paths to deal with whitespace in paths</li>
-						<li>Windows 10 has removed the 260 char max file path limit</li>
+						<li>Windows 10 removed the 260 char max file path limit! 🎉</li>
 					</ul>
 
 					<aside class="notes">
@@ -242,6 +242,70 @@ func getUserHomeDir() string {
 						* cli - prefer with posix style arguments, `git commit --message foobar`
 						* logging
 					</aside>
+				</section>
+
+				<section>
+					<section id="installation">
+						<h2>Installation</h2>
+
+						<p>May I recommend some delicious chocolatey nuget...</p>
+	<pre><code class="powershell" data-trim data-noescape style="font-size: 0.82em">
+	choco install magic
+	</code></pre>
+
+						<p>Perhaps you like to live dangerously?</p>
+	<pre><code class="powershell" data-trim data-noescape style="font-size: 0.82em">
+	iwr https://example.com/install-magic.ps1 -UseBasicParsing | iex
+	</code></pre>
+					</section>
+
+					<section id="choco">
+
+<p style="text-align: left">magic.nuspec</p>
+<pre><code class="xml" data-trim data-noescape>
+&lt;package&gt;
+  &lt;metadata&gt;
+    &lt;id&gt;foobar&lt;/id&gt;
+    &lt;version&gt;$version$&lt;/version&gt;
+    &lt;authors&gt;Carolyn Van Slyck&lt;/authors&gt;
+    &lt;description&gt;It does both stuff _and_ things!&lt;/description&gt;
+  &lt;/metadata&gt;
+  &lt;files&gt;
+    &lt;file src=&quot;foobar.exe&quot; /&gt;
+  &lt;/files&gt;
+&lt;/package&gt;
+</code></pre>
+
+<p style="text-align: left">Ship it!</p>
+<pre><code class="xml" data-trim data-noescape>
+> choco pack magic.nuspec --Version 1.0.0
+> choco push magic.1.0.0.nupkg --api-key my-secret-api-key
+</code></pre>
+
+<p style="text-align: left">Usage</p>
+<pre><code class="xml" data-trim data-noescape>
+> choco install magic
+> magic
+🎵 Oh oh it's magic! 🎵
+</code></pre>
+
+					</section>
+
+					<section id="install-script">
+						<p style="text-align: left">install-magic.ps1</p>
+<pre><code class="powershell" data-trim data-noescape style="font-size: 0.9em">
+if($PSVersionTable -eq $null -or $PSVersionTable.PSVersion.Major -lt 4){
+  Write-Output "magic requires PowerShell version 4 or higher."
+  Exit 1
+}
+
+$installDir = Join-Path $env:USERPROFILE .magic
+iwr -uri https://example.com/magic.exe -outfile $installDir
+
+echo 'Magic is now installed!'
+echo 'Add it to your path by running $env:PATH += ";" + $installDir'
+</code></pre>
+					</section>
 				</section>
 
 				<section>

@@ -166,18 +166,22 @@ blockquote cite:before {
   margin: 20px auto;
   text-align: left;
   font-size: 0.55em;
-  font-family: monospace;
+  font-family: "lucida console", monospace;
   line-height: 1.2em;
   word-wrap: break-word; }
 
-.reveal code {
-  font-family: monospace; }
-
 .reveal code.inline {
   background: #3f3f3f;
-  color: #dcdcdc;
-  font-size: 0.9em;
-}
+  color: white;
+  font-size: 0.8em;
+  font-weight: lighter;
+  font-family: "lucida console", monospace; }
+
+.reveal .envvar td {
+  font-size: 0.8em;
+  font-weight: lighter;
+  font-family: "lucida console", monospace;
+  text-transform: uppercase; }
 
 .reveal pre code {
   display: block;
