@@ -125,7 +125,7 @@ body {
 .reveal blockquote {
   display: block;
   position: relative;
-  margin: 0.25em 0;
+  margin: 2em 0;
   padding: 0.25em 40px;
   line-height: 1.45;
   font-family: Georgia, serif;
@@ -138,10 +138,10 @@ body {
 .reveal blockquote:before {
   display: block;
   content: "\201C";
-  font-size: 80px;
+  font-size: 2em;
   position: absolute;
-  left: -20px;
-  top: -20px;
+  left: 1em;
+  top: -0.5em;
 }
 
 blockquote cite {
@@ -168,7 +168,10 @@ blockquote cite:before {
   font-size: 0.55em;
   font-family: "lucida console", monospace;
   line-height: 1.2em;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+  -moz-tab-size: 2;
+  -webkit-tab-size: 2;
+  tab-size: 2; }
 
 .reveal code.inline {
   background: #3f3f3f;

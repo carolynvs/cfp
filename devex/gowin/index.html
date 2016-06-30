@@ -135,12 +135,8 @@
 					<h2>Cross Compilation</h2>
 
 <pre><code class="bash" data-trim data-noescape>
-GOOS=windows GOARCH=amd64 \
-go build -o bin/Windows/x86_64/magic.exe \
-github.com/me/magic
+GOOS=windows GOARCH=amd64 go build -o magic.exe
 </code></pre>
-
-					<p><small>I prefer matching the output of <code class="inline">uname -s</code> and <code class="inline">uname -a</code> to make scripting easier</small></p>
 
 					<aside class="notes">
 						This is why I love go over other languages!<br/>
@@ -244,6 +240,67 @@ func getUserHomeDir() string {
 					</aside>
 				</section>
 
+				<section id="doc">
+					<h2>Documentation</h2>
+
+					<img src="images/mlp-doc-salute.png" alt="My Little Ponies: Salute to Documentation" />
+
+					<aside class="notes">
+						* Installation<br/>
+						* Usage<br/>
+						* Contributing<br/>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<section id="docstyle">
+<p style="text-align: left; margin-left: 40px"><strong>Mac OS X with Homebrew</strong></p>
+<pre><code class="bash" data-trim data-noescape style="font-size: 0.9em">
+$ brew install magic
+</code></pre>
+
+<p style="text-align: left; margin-left: 40px"><strong>Mac OS X and Linux</strong></p>
+<pre><code class="bash" data-trim data-noescape style="font-size: 0.9em">
+$ curl -sL https://example.com/install-magic.sh | sh
+</code></pre>
+
+<p style="text-align: left; margin-left: 40px"><strong>Windows with Chocolatey</strong></p>
+<pre><code class="powershell" data-trim data-noescape style="font-size: 0.9em">
+> choco install magic
+</code></pre>
+
+<p style="text-align: left; margin-left: 40px"><strong>Windows</strong></p>
+<pre><code class="powershell" data-trim data-noescape style="font-size: 0.9em">
+> iwr https://example.com/install-magic.ps1 -UseBasicParsing | iex
+</code></pre>
+					</section>
+
+					<section id="shells">
+						<h2>Windows Shells</h2>
+
+						<table style="white-space: nowrap">
+							<tr><th>CMD</th><th>PowerShell</th><th>Bash</th></tr>
+							<tr>
+								<td>
+									<p>👍 Familiar to users</p>
+									<p>👎 Limited funcionality</p>
+								</td>
+							<td>
+								<p>👍 Quirky but powerful</p>
+								<p>👎 Many versions</p>
+							</td>
+							<td>
+								<p>👍 Familiar to devs</p>
+								<p>❓ Scripting reuse</p>
+								<p>👎 Fewer users</p>
+							</td></tr>
+						</table>
+
+						<p style="font-size: 0.9em">If you can only document one for end-users, use PowerShell v4.0</p>
+					</section>
+				</section>
+
 				<section>
 					<section id="installation">
 						<h2>Installation</h2>
@@ -276,7 +333,7 @@ func getUserHomeDir() string {
 &lt;/package&gt;
 </code></pre>
 
-<p style="text-align: left">Ship it!</p>
+<p style="text-align: left">Ship it!<img src="images/shipit.png" alt"ship it squirrel" style="height: 1em; border-radius: 0; margin: 0 0 0 0.5em"/></p>
 <pre><code class="xml" data-trim data-noescape>
 > choco pack magic.nuspec --Version 1.0.0
 > choco push magic.1.0.0.nupkg --api-key my-secret-api-key
@@ -308,43 +365,63 @@ echo 'Add it to your path by running $env:PATH += ";" + $installDir'
 					</section>
 				</section>
 
-				<section>
-					<section id="doc">
-						<h2>Documentation</h2>
-
-						<blockquote>
-							The pain of maintaining a project is often inversely proportional to the value placed on documentation.
-						</blockquote>
-					</section>
-
-					<section id="shells">
-						<h2>Windows Shells</h2>
-
-						<table style="white-space: nowrap">
-							<tr><th>CMD</th><th>PowerShell</th><th>Bash</th></tr>
-							<tr>
-								<td>
-									<p>👍 Familiar to users</p>
-									<p>👎 Limited funcionality</p>
-								</td>
-							<td>
-								<p>👍 Quirky but powerful</p>
-								<p>👎 Many versions</p>
-							</td>
-							<td>
-								<p>👍 Familiar to devs</p>
-								<p>❓ Scripting reuse</p>
-								<p>👎 Fewer users</p>
-							</td></tr>
-						</table>
-
-						<p style="font-size: 0.9em">If you can only support one, go with PowerShell v4.0</p>
-					</section>
-				</section>
-
 				<section id="contrib">
 					<h2>Contributors</h2>
 					<img src="images/pyramid-contrib.png" alt="1. cross-platform code, 2. user experience, 3. contributors, 4. ci" height="400px" />
+				</section>
+
+				<section id="build">
+					<img src="images/build-of-dreams.png" alt="If they can build it, they will come" />
+				</section>
+
+				<section>
+					<section id="build-scripts">
+						<h2>Build Scripts</h2>
+
+						<p>Developers are just a <br/><code class="inline">git clone &amp;&amp; [make][./build]</code><br/> away from success</p>
+
+						<aside class="notes">
+							Reasonable Assumptions:<br/>
+								* Go is installed<br/>
+								* Bash is available<br/>
+						</aside>
+					</section>
+
+					<section id="make">
+						<h2>Make*</h2>
+<pre><code class="makefile" data-trim data-noescape style="font-size: 0.9em">
+get-deps:
+	@echo "Installing glide..."
+	go get github.com/Masterminds/glide
+	glide install
+
+cross-build: clean get-deps linux darwin windows
+
+linux: $(GOFILES) get-deps
+	GOOS=linux GOARCH=amd64 go build -o bin/Linux/x86_64/magic
+
+darwin: $(GOFILES) get-deps
+	GOOS=darwin GOARCH=amd64 go build -o bin/Darwin/x86_64/magic
+
+windows: $(GOFILES) get-deps
+	GOOS=windows GOARCH=amd64 go build -o bin/Windows/x86_64/magic.exe
+</pre></code>
+
+					<p style="font-size: 0.9em">* Assumes Git for Windows SDK or Cygwin is installed</p>
+					</section>
+
+					<section id="Bash">
+						<h2>Bash</h2>
+
+<pre><code class="bash" data-trim data-noescape style="font-size: 0.9em">
+#! /bin/bash
+go get github.com/Masterminds/glide
+glide install
+GOOS=linux GOARCH=amd64 go build -o bin/Linux/x86_64/dvm-helper
+GOOS=darwin GOARCH=amd64 go build -o bin/Darwin/x86_64/dvm-helper
+GOOS=windows GOARCH=amd64 go build -o bin/Windows/x86_64/dvm-helper.exe
+</code></pre>
+					</section>
 				</section>
 
 				<section id="ci">
@@ -379,8 +456,6 @@ echo 'Add it to your path by running $env:PATH += ";" + $installDir'
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
 				keyboard: {
-					39: 'next', // Map next/previous for use with remote
-					37: 'prev',
 					190: null // Disable blank screen hell
 				},
 
