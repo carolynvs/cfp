@@ -378,7 +378,7 @@ echo 'Add it to your path by running $env:PATH += ";" + $installDir'
 					<section id="build-scripts">
 						<h2>Build Scripts</h2>
 
-						<p>Developers are just a <br/><code class="inline">git clone &amp;&amp; [make][./build]</code><br/> away from success</p>
+						<p>Never more than a <br/><code class="inline">git clone &amp;&amp; [make][./build]</code><br/> away from success</p>
 
 						<aside class="notes">
 							Reasonable Assumptions:<br/>
@@ -427,7 +427,51 @@ GOOS=windows GOARCH=amd64 go build -o bin/Windows/x86_64/dvm-helper.exe
 				<section id="ci">
 					<h2>Continuous Integration</h2>
 					<img src="images/pyramid-ci.png" alt="1. cross-platform code, 2. user experience, 3. contributors, 4. ci" height="400px" />
+
+					<aside class="notes">
+						* Not really optional these days, but...
+						* Contributor confidence
+						* Less likely to break something on other platforms
+						* Simply good form
+					</aside>
 				</section>
+
+				<section id="ci-build">
+					what should be in a ci build for windows?
+					* verify the the old build script still works!
+					* test the app on windows
+					* chocolatey packaging and publishing
+				</section>
+
+				<section>
+					<section id="ci-services">
+						<h2>CI for Windows</h2>
+						appveyor
+						myget
+
+						<aside class="notes">
+							* obviously if you are running your own, jenkins, team city, bamboo, etc all works too
+							* touch on future of windocker
+						</aside>
+					</section>
+
+					<section id="appveyor">
+<p style="text-align: left">appveyor.yml</p>
+<pre><code class="yaml" data-trim data-noescape style="font-size: 0.9em">
+TODO SAMPLE APPVEYOR FILE
+</code></pre>
+					</section>
+
+					<section id="myget">
+<p style="text-align: left">myget.ps1</p>
+<pre><code class="bash" data-trim data-noescape style="font-size: 0.9em">
+TODO SAMPLE MYGET FILE
+</code></pre>
+
+						<aside class="notes">
+							* myget feeds vs. chocolatey
+						</aside>
+					</section>
 
 				<section id="takeout">
 					<h2>Thank you</h2>
