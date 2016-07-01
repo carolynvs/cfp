@@ -262,6 +262,12 @@ blockquote cite:before {
   border-radius: 10px;
 }
 
+.reveal img.emoji {
+  margin: 0;
+  border-radius: 0;
+  height: 0.9em;
+}
+
 .reveal section img.plain {
   border: 0;
   box-shadow: none; }

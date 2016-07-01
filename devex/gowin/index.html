@@ -443,10 +443,15 @@ GOOS=windows GOARCH=amd64 go build -o bin/Windows/x86_64/magic.exe
 				</section>
 
 				<section id="ci-build">
-					what should be in a ci build for windows?
-					* verify the the old build script still works!
-					* test the app on windows
-					* chocolatey packaging and publishing
+					<h2>Do I <em>really</em> need a Windows Build?</h2>
+
+					<aside class="notes">
+						<ul>
+							<li>Your build script works on Windows, right?</li>
+							<li>You have better things to do than manually spot check that it still works on Windows.</li>
+							<li>You automated publishing a Windows package to Chocolatey.</li>
+						</ul>
+					</aside>
 				</section>
 
 				<section>
@@ -479,13 +484,43 @@ TODO SAMPLE MYGET FILE
 						</aside>
 					</section>
 				</section>
-				
+
+				<section id="wrapup">
+					<img src="images/pyramid.png" alt="1. cross-platform code, 2. user experience, 3. contributors, 4. ci" height="400px" />
+
+					<aside class="notes">
+						So what have we done today? <br/>
+						* Decided to embrace our Windows users</br>
+						* Realized that Go does all the hard work<br/>
+						* Covered common areas where Windows is different<br/>
+						* Lure Windows contributors to your project<br/>
+						* Automated all the things<br/>
+					</aside>
+				</section>
+
+				<section id="resources">
+					<h2>Resources</h2>
+
+					<ul style="list-style-type: none">
+						<li><a href="http://dave.cheney.net/2015/08/22/cross-compilation-with-go-1-5">Go Cross Compilation</a></li>
+						<li><a href="http://dave.cheney.net/2013/10/12/how-to-use-conditional-compilation-with-the-go-build-tool">Go Conditional Compilation</a></li>
+						<li><a href="https://chocolatey.org/docs/create-packages">Chocolatey Packaging</a> <img src="images/chocolatey.png" alt="Chocolatey Logo" class="emoji"/></li>
+						<li><a href="http://carolynvanslyck.com/blog/2016/01/stealth-lolnix/">Lolnix: "Linux" on Windows</a></li>
+					</ul>
+
+					<aside class="notes">
+						Just go read all of Dave Cheney's blog!<br/>
+						Mention W10 Windows Subsystem for Linux
+					</aside>
+				</section>
+
 				<section id="takeout">
 					<h2>Thank you</h2>
 
 					<p><img src="images/me.gif" width="120px"/></p>
 					<p><a href="http://twitter.com/carolynvs" target="_blank">@carolynvs</a></p>
-					<p><a href="http://carolynvanslyck.com/talk/devex/gowin">http://carolynvanslyck.com/talk/devex/gowin</a></p>
+					<p>Slides - <a href="http://carolynvanslyck.com/talk/devex/gowin">http://carolynvanslyck.com/talk/devex/gowin</a></p>
+					<p>Post - <a href="http://carolynvanslyck.com/blog/2016/07/gowin">http://carolynvanslyck.com/blog/2016/07/gowin</a></p>
 				</section>
 			</div>
 
