@@ -55,15 +55,6 @@
 						</aside>
 				</section>
 
-				<section id="me">
-					<h2>Support ALL THE PEOPLES!</h2>
-
-					<p><img src="images/accessibility-dino.png" alt="Accessibility Dinosaur" /></p>
-
-					<h2>Rackspace Developer Experience Team</h2>
-					<p>Occasional Windows Ambassador / Apologist</p>
-				</section>
-
 				<section id="incoming!">
 					<img src="images/windevs-coming.jpg" alt="Game of Thrones: Brace Yourselves, WinDevs are coming" />
 
@@ -97,6 +88,15 @@
 						Improved code</br>
 						It may be your job
 					</aside>
+				</section>
+
+				<section id="me">
+					<h2>Support ALL THE PEOPLES!</h2>
+
+					<p><img src="images/accessibility-dino.png" alt="Accessibility Dinosaur" /></p>
+
+					<h2>Rackspace Developer Experience Team</h2>
+					<p>Occasional Windows Ambassador / Apologist</p>
 				</section>
 
 				<section id="storytime">
@@ -232,20 +232,20 @@ func getUserHomeDir() string {
 					</aside>
 				</section>
 
-				<section id="doc">
-					<h2>Documentation</h2>
-
-					<img src="images/mlp-doc-salute.png" alt="My Little Ponies: Salute to Documentation" />
-
-					<aside class="notes">
-						* Installation<br/>
-						* Usage<br/>
-						* Contributing<br/>
-						</ul>
-					</aside>
-				</section>
-
 				<section>
+					<section id="doc">
+						<h2>Documentation</h2>
+
+						<img src="images/mlp-doc-salute.png" alt="My Little Ponies: Salute to Documentation" />
+
+						<aside class="notes">
+							* Installation<br/>
+							* Usage<br/>
+							* Contributing<br/>
+							</ul>
+						</aside>
+					</section>
+
 					<section id="docstyle">
 <p style="text-align: left; margin-left: 40px"><strong>Mac OS X with Homebrew</strong></p>
 <pre><code class="bash" data-trim data-noescape style="font-size: 0.9em">
@@ -343,14 +343,17 @@ $ curl -sL https://example.com/install-magic.sh | sh
 					<section id="install-script">
 						<p style="text-align: left">install-magic.ps1</p>
 <pre><code class="powershell" data-trim data-noescape style="font-size: 0.9em">
+# Check if they have PowerShell 4+
 if($PSVersionTable -eq $null -or $PSVersionTable.PSVersion.Major -lt 4){
   Write-Output "magic requires PowerShell version 4 or higher."
   Exit 1
 }
 
+# Download to the installation directory
 $installDir = Join-Path $env:USERPROFILE .magic
 iwr -uri https://example.com/magic.exe -outfile $installDir
 
+# Print additional instructions
 echo 'Magic is now installed!'
 echo 'Add it to your path by running $env:PATH += ";" + $installDir'
 </code></pre>
