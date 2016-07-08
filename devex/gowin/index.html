@@ -50,7 +50,10 @@
 						<p>Carolyn Van Slyck</p>
 
 						<aside class="notes">
-							Takeaways: beyond cross-compiling, user experience and gaining contributors
+							Hello Gophers!<br/>
+							Go cross-platform development<br/>
+							Improve user experience on Windows<br/>
+							Lure windows developers<br/>
 						</aside>
 				</section>
 
@@ -147,7 +150,7 @@ GOOS=windows GOARCH=amd64 go build -o magic.exe
 							comments are more powerful
 						</aside>
 					</section>
-					<section id="go-files-example" style="font-size: 0.9em">
+					<section id="go-files-example">
 						<p style="text-align: left">magic.go</p>
 <pre><code class="go" data-trim data-noescape>
 func getMagicFilePath() string {
@@ -156,7 +159,7 @@ func getMagicFilePath() string {
 </code></pre>
 
 						<p style="text-align: left">magic.nix.go</p>
-<pre><code class="go" data-trim data-noescape style="font-size: 0.9em">
+<pre><code class="go" data-trim data-noescape>
 // +build !windows
 
 const fileExtension string = ".sh"
@@ -167,7 +170,7 @@ func getUserHomeDir() string {
 </code></pre>
 
 						<p style="text-align: left">magic.windows.go</p>
-<pre><code class="go" data-trim data-noescape style="font-size: 0.9em">
+<pre><code class="go" data-trim data-noescape>
 // +build windows
 
 const fileExtension string = ".ps1"
@@ -236,22 +239,22 @@ func getUserHomeDir() string {
 
 					<section id="docstyle">
 <p style="text-align: left; margin-left: 40px"><strong>Mac OS X with Homebrew</strong></p>
-<pre><code class="bash" data-trim data-noescape style="font-size: 0.9em">
+<pre><code class="bash" data-trim data-noescape>
 $ brew install magic
 </code></pre>
 
 <p style="text-align: left; margin-left: 40px"><strong>Mac OS X and Linux</strong></p>
-<pre><code class="bash" data-trim data-noescape style="font-size: 0.9em">
+<pre><code class="bash" data-trim data-noescape>
 $ curl -sL https://example.com/install-magic.sh | sh
 </code></pre>
 
 <p style="text-align: left; margin-left: 40px"><strong>Windows with Chocolatey</strong></p>
-<pre><code class="powershell" data-trim data-noescape style="font-size: 0.9em">
+<pre><code class="powershell" data-trim data-noescape>
 > choco install magic
 </code></pre>
 
 <p style="text-align: left; margin-left: 40px"><strong>Windows</strong></p>
-<pre><code class="powershell" data-trim data-noescape style="font-size: 0.9em">
+<pre><code class="powershell" data-trim data-noescape>
 > iwr https://example.com/install-magic.ps1 -UseBasicParsing | iex
 </code></pre>
 					</section>
@@ -277,7 +280,7 @@ $ curl -sL https://example.com/install-magic.sh | sh
 							</td></tr>
 						</table>
 
-						<p style="font-size: 0.9em">If you can only document one for end-users, use PowerShell v4.0</p>
+						<p>If you can only document one shell for end-users, use PowerShell v4.0</p>
 					</section>
 				</section>
 
@@ -286,12 +289,12 @@ $ curl -sL https://example.com/install-magic.sh | sh
 						<h2>Installation</h2>
 
 						<p>May I recommend some delicious chocolatey nuget...</p>
-	<pre><code class="powershell" data-trim data-noescape style="font-size: 0.82em">
+	<pre><code class="powershell" data-trim data-noescape>
 	choco install magic
 	</code></pre>
 
 						<p>Perhaps you like to live dangerously?</p>
-	<pre><code class="powershell" data-trim data-noescape style="font-size: 0.82em">
+	<pre><code class="powershell" data-trim data-noescape>
 	iwr https://example.com/install-magic.ps1 -UseBasicParsing | iex
 	</code></pre>
 					</section>
@@ -330,7 +333,7 @@ $ curl -sL https://example.com/install-magic.sh | sh
 
 					<section id="install-script">
 						<p style="text-align: left">install-magic.ps1</p>
-<pre><code class="powershell" data-trim data-noescape style="font-size: 0.9em">
+<pre><code class="powershell" data-trim data-noescape>
 # Check if they have PowerShell 4+
 if($PSVersionTable -eq $null -or $PSVersionTable.PSVersion.Major -lt 4){
   Write-Output "magic requires PowerShell version 4 or higher."
@@ -383,7 +386,7 @@ echo 'Add it to your path by running $env:PATH += ";" + $installDir'
 					<section id="make">
 						<h2>Make</h2>
 <p style="text-align: left">Makefile</p>
-<pre><code class="makefile" data-trim data-noescape style="font-size: 0.9em">
+<pre><code class="makefile" data-trim data-noescape>
 get-deps:
 	@echo "Installing glide..."
 	go get github.com/Masterminds/glide
@@ -406,7 +409,7 @@ windows: $(GOFILES) get-deps
 						<h2>Bash</h2>
 
 <p style="text-align: left">build</p>
-<pre><code class="bash" data-trim data-noescape style="font-size: 0.9em">
+<pre><code class="bash" data-trim data-noescape>
 #! /bin/bash
 
 # Get our magical dependencies
