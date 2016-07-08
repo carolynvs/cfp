@@ -439,27 +439,59 @@ GOOS=windows GOARCH=amd64 go build -o bin/Windows/x86_64/magic.exe
 
 				<section>
 					<section id="ci-services">
-						<h2>CI for Windows</h2>
-						appveyor
-						myget
+						<h2>CI Services</h2>
 
-						<aside class="notes">
-							* obviously if you are running your own, jenkins, team city, bamboo, etc all works too<br/>
-							* touch on future of windocker
-						</aside>
+						<table>
+							<tr>
+								<td><img src="images/appveyor.png" alt="AppVeyor logo" /></td>
+								<td><img src="images/myget.png" alt="MyGet logo" /></td>
+							</tr>
+							<tr>
+								<td style="text-align: center">AppVeyor</td>
+								<td style="text-align: center">MyGet</td>
+							</tr>
+						</table>
 					</section>
 
 					<section id="appveyor">
 <p style="text-align: left">appveyor.yml</p>
-<pre><code class="yaml" data-trim data-noescape style="font-size: 0.9em">
-TODO SAMPLE APPVEYOR FILE
+<pre><code class="yaml" data-trim data-noescape>
+clone_folder: C:\Go\src\github.com\carolynvs\magic
+environment:
+  GOPATH: C:\Go
+build_script:
+- ps: >-
+    $env:PATH+="$env:PATH;$GOPATH\bin";
+    bash -c "./build.sh";
+    installer\package.ps1 -version $env:APPVEYOR_BUILD_VERSION
+artifacts:
+- path: '**\*.nupkg'
+deploy:
+- provider: NuGet
+  api_key:
+    secure: X8dN8VATxHQAHxbwawEpCov4SaerAp45Uqc8dDlM9b4=
 </code></pre>
 					</section>
 
 					<section id="myget">
 <p style="text-align: left">myget.ps1</p>
-<pre><code class="bash" data-trim data-noescape style="font-size: 0.9em">
-TODO SAMPLE MYGET FILE
+<pre><code class="powershell" data-trim data-noescape>
+$packagePath = "src/github.com/carolynvs/magic"
+
+echo "Moving source code into the GOPATH..."
+$env:GOPATH = "$PSScriptRoot"
+$env:PATH += ";$env:GOPATH\bin"
+mkdir -f $packagePath *> $null
+ls -exclude @("src","myget.ps1") | %{mv $_.fullname $packagePath}
+cd $packagePath
+
+echo "Downloading the Git for Windows bash.exe wrapper..."
+$bash = "C:\git-sdk-64\bin\bash.exe"
+mkdir -f (split-path $bash) *> $null
+curl -outfile $bash https://bintray.com/carolynvs/git-for-windows-tools/download_file?file_path=bash-x86.exe
+
+& $bash -c "make"
+installer\package.ps1 -version $env:PackageVersion
 </code></pre>
 
 						<aside class="notes">
