@@ -6,7 +6,7 @@
 
 		<title>Gopher Windows</title>
 
-		<meta name="description" content="Grow your users from an unlikely source: Windows developers">
+		<meta name="description" content="Gopher Windows: Beyond Cross-Compiling">
 		<meta name="author" content="Carolyn Van Slyck">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -44,8 +44,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-						<h1>Grow your users from an unlikely source:</h1>
-						<h3>Windows developers</h3>
+						<h1>Grow your users from an unlikely source:<br/>Windows developers</h1>
 
 						<p><img src="images/gopher-plane-windows.png" alt="Gopher Windows Skywriter Plane"/></p>
 						<p>Carolyn Van Slyck</p>
@@ -76,17 +75,6 @@
 					</table>
 					<aside class="notes">
 
-					</aside>
-				</section>
-
-				<section id="grouphug">
-					<h2>Why Bother?</h2>
-
-					<aside class="notes">
-						Because you made something cool and want everyone to use it<br/>
-						More users = more contributors</br>
-						Improved code</br>
-						It may be your job
 					</aside>
 				</section>
 
@@ -199,7 +187,7 @@ func getUserHomeDir() string {
 							<tr><th>*nix</th><th>windows</th></tr>
 						</thead>
 						<tbody class="envvar">
-							<tr><td>home</td><td>userprofile <br/> (local)appdata</td></tr>
+							<tr><td>home</td><td>userprofile</td></tr>
 							<tr><td>path <code class="inline">:</code></td><td>path <code class="inline">;</code></td></tr>
 							<tr><td>shell</td><td>💩</td></tr>
 							<tr><td>tmpdir</td><td>tmp/temp</td></tr>
@@ -449,18 +437,6 @@ GOOS=windows GOARCH=amd64 go build -o bin/Windows/x86_64/magic.exe
 					</aside>
 				</section>
 
-				<section id="ci-build">
-					<h2>Do I <em>really</em> need a Windows Build?</h2>
-
-					<aside class="notes">
-						<ul>
-							<li>Your build script works on Windows, right?</li>
-							<li>You have better things to do than manually spot check that it still works on Windows.</li>
-							<li>You automated publishing a Windows package to Chocolatey.</li>
-						</ul>
-					</aside>
-				</section>
-
 				<section>
 					<section id="ci-services">
 						<h2>CI for Windows</h2>
@@ -545,6 +521,10 @@ TODO SAMPLE MYGET FILE
 				progress: true,
 				history: true,
 				center: true,
+
+				// use 16:9 aspect ratio
+				width: 1600,
+				height: 900,
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
