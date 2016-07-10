@@ -291,14 +291,10 @@ $ curl -sL https://example.com/install-magic.sh | sh
 						<h2>Installation</h2>
 
 						<p>May I recommend some delicious chocolatey nuget...</p>
-	<pre><code class="powershell" data-trim data-noescape>
-	choco install magic
-	</code></pre>
+						<p><code class="inline">choco install magic</code></p>
 
 						<p>Perhaps you like to live dangerously?</p>
-	<pre><code class="powershell" data-trim data-noescape>
-	iwr https://example.com/install-magic.ps1 -UseBasicParsing | iex
-	</code></pre>
+						<p><code class="inline">iwr https://example.com/install-magic.ps1 -UseBasicParsing | iex</code></p>
 					</section>
 
 					<section id="choco">
@@ -458,45 +454,54 @@ GOOS=windows GOARCH=amd64 go build -o bin/Windows/x86_64/magic.exe
 						</table>
 					</section>
 
-					<section id="appveyor">
+					<section id="appveyor-ui"
+						data-background-image="images/appveyor-screenshot.png"
+						data-background-size="contain">
+					</section>
+
+					<section id="appveyor-cfg">
 <p style="text-align: left">appveyor.yml</p>
 <pre><code class="yaml" data-trim data-noescape>
+version: 1.0.{build}
 clone_folder: C:\Go\src\github.com\carolynvs\magic
 environment:
   GOPATH: C:\Go
+  CHOCO_APIKEY:
+    secure: 1+9/0TqWnW0Sfg7PtlE1USgm+ctx132qxDX73PcYFJV/hfNUhPcaZqyX3EcUkKvG
 build_script:
 - ps: >-
-    $env:PATH+="$env:PATH;$GOPATH\bin";
-    bash -c "./build.sh";
-    installer\package.ps1 -version $env:APPVEYOR_BUILD_VERSION
-artifacts:
-- path: '**\*.nupkg'
-deploy:
-- provider: NuGet
-  api_key:
-    secure: X8dN8VATxHQAHxbwawEpCov4SaerAp45Uqc8dDlM9b4=
+    $env:PATH+="$env:PATH;$GOPATH\bin"
+
+    bash -c "./build.sh"
+
+    installer\publish.ps1 -version $env:APPVEYOR_BUILD_VERSION -apikey $env:CHOCO_APIKEY
 </code></pre>
 					</section>
 
-					<section id="myget">
+					<section id="myget-ui"
+						data-background-image="images/myget-screenshot.png"
+						data-background-size="contain">
+					</section>
+
+					<section id="myget-cfg">
 <p style="text-align: left">myget.ps1</p>
 <pre><code class="powershell" data-trim data-noescape>
 $packagePath = "src/github.com/carolynvs/magic"
-
 echo "Moving source code into the GOPATH..."
-$env:GOPATH = "$PSScriptRoot"
-$env:PATH += ";$env:GOPATH\bin"
+$env:GOPATH = "$PSScriptRoot"; $env:PATH += ";$env:GOPATH\bin"
 mkdir -f $packagePath *> $null
 ls -exclude @("src","myget.ps1") | %{mv $_.fullname $packagePath}
 cd $packagePath
 
-echo "Downloading the Git for Windows bash.exe wrapper..."
+# Grab the magical bash wrapper and put in a happy place
 $bash = "C:\git-sdk-64\bin\bash.exe"
 mkdir -f (split-path $bash) *> $null
-curl -outfile $bash https://bintray.com/carolynvs/git-for-windows-tools/download_file?file_path=bash-x86.exe
+cp C:\git-sdk-64\mingw64\share\git\compat-bash.exe $bash
 
+echo "Building..."
 & $bash -c "make"
-installer\package.ps1 -version $env:PackageVersion
+echo "Publishing..."
+installer\publish.ps1 -version $env:PackageVersion -apikey $env:CHOCO_APIKEY
 </code></pre>
 
 						<aside class="notes">
