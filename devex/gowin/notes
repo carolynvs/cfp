@@ -1,6 +1,6 @@
 <intro slide>
-Hellooooooo gophers! I hope you are enjoying gophercon so far.
-Today we're going to dive into my favorite topic: go and windows!
+Hellooooooo gophers! I am so excited to be here at my first GopherCon.
+Today we're going to dive into my favorite topic: go and windows.
 Many of you may already know that go is awesome for cross platform development
 and I'll touch on the whys and hows later. What I really want to share with you all
 is how you can improve the user experience of your app on Windows and lure
@@ -13,8 +13,7 @@ Let me give you a little bit of my own background and experience with windows de
 my dev machine was Windows, I used an all MS stack, coded in visual studio, deployed to windows server and
 my users were all on Windows as well. It was a bit of a bubble, comfy but a bubble. On the flip side,
 the other half had linux dev machines, used a much more heterogeneous stack, most of it taking advantage of
-open source software, coded in a text editor, deployed to multiple linux distros and supported a
-user base that often looked pretty similar to them. While there certainly were cross platform applications,
+open source software, and users often looked pretty similar to them. While there certainly were cross platform applications,
 most users I knew were either in one camp or the other, and didn't much care what the other side was up to.
 
 If you think the world is still like that today, its not. My dev machine is a mac,
