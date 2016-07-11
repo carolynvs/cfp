@@ -63,6 +63,7 @@
 					<aside class="notes">
 						WinDev vs. LinuxDev in 2005<br/>
 						What WinDev looks like today<br/>
+						Not special snowflake<br/>
 						My journey -> .NET Core 1.0<br/>
 						Walls coming down
 					</aside>
@@ -74,12 +75,12 @@
 					<table>
 						<tr><th>Expecations</th><th>Reality</th></tr>
 						<tr><td>Easy to install</td><td>... if you BYOB</td></tr>
-						<tr><td>It just works<sup style="font-size: 0.5em">TM</sup></td><td>... on my Mac</td></tr>
+						<tr><td>It just works<sup style="font-size: 0.5em">TM</sup></td><td>... except on Windows</td></tr>
 						<tr><td>Documented</td><td>... only for bash</td></tr>
-						<tr><td>Accepts PRs</td><td>... if you can build it</td></tr>
+						<tr><td>I can contribute</td><td>... if I have a mac</td></tr>
 					</table>
 					<aside class="notes">
-
+						Linux First is not a good way to welcome users
 					</aside>
 				</section>
 
@@ -160,9 +161,9 @@ GOOS=windows GOARCH=amd64 go build -o magic.exe
 						</ul>
 
 						<aside class="notes">
-							composable<br/>
-							isn't restricted to just one OS<br/>
-							nix: comments are more powerful
+							need different logic or values for platforms<br/>
+							file extensions<br/>
+							powerfull comments
 						</aside>
 					</section>
 					<section id="go-files-example">
@@ -395,6 +396,7 @@ echo 'Add it to your path by running $env:PATH += ";" + $installDir'
 					<img src="images/pyramid-contrib.png" alt="1. cross-platform code, 2. user experience, 3. contributors, 4. ci" height="400px" />
 
 					<aside class="notes">
+						we have code and people use it!<br/>
 						make life easier for us and brave souls
 					</aside>
 				</section>
