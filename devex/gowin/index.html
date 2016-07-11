@@ -90,6 +90,12 @@
 
 					<h2>Rackspace Developer Experience Team</h2>
 					<p>Occasional Windows Ambassador / Apologist</p>
+
+					<aside class="notes">
+						I work on a few go projects<br/>
+						Only admitted windev<br/>
+						Ensure our stuff doesn't suck on Windows<br/>
+					</aside>
 				</section>
 
 				<section id="storytime">
@@ -112,12 +118,19 @@
 						dvm sh->go rewrite<br/>
 						carina pkg + conditional compilation<br/>
 						rack pkg<br/>
+						street creds: new to go, not xplat
 					</aside>
 				</section>
 
 				<section id="code">
 					<h2>Cross-Platform Code</h2>
 					<img src="images/pyramid-code.png" alt="1. cross-platform code, 2. user experience, 3. contributors, 4. ci" height="400px" />
+
+					<aside class="notes">
+						go xplat deceptive<br/>
+						foundation first class support<br/>
+						maslow survival, want more
+					</aside>
 				</section>
 
 				<section id="go-build">
@@ -128,8 +141,8 @@ GOOS=windows GOARCH=amd64 go build -o magic.exe
 </code></pre>
 
 					<aside class="notes">
-						This is why I love go over other languages!<br/>
-						Buuuut this is just the first step...
+						This is why I love go over other C#, java or python!<br/>
+						goos, goarch
 					</aside>
 				</section>
 
@@ -139,17 +152,17 @@ GOOS=windows GOARCH=amd64 go build -o magic.exe
 
 						<ul>
 							<li>magic.go</li>
-							<li>magic.386.go - <code class="go inline"><span class="hljs-comment">// +build 386</span></code></li>
-							<li>magic.amd64.go - <code class="go inline"><span class="hljs-comment">// +build amd64</span></code></li>
-							<li>magic.darwin.go - <code class="go inline"><span class="hljs-comment">// +build darwin</span></code></li>
+							<li>magic.386.go</li>
+							<li>magic.amd64.go</li>
+							<li>magic.darwin.go</li>
 							<li>magic.nix.go - <code class="go inline"><span class="hljs-comment">// +build !windows</span></code></li>
-							<li>magic.windows.go - <code class="go inline"><span class="hljs-comment">// +build windows</span></code></li>
+							<li>magic.windows.go</li>
 						</ul>
 
 						<aside class="notes">
 							composable<br/>
 							isn't restricted to just one OS<br/>
-							comments are more powerful
+							nix: comments are more powerful
 						</aside>
 					</section>
 					<section id="go-files-example">
@@ -181,6 +194,11 @@ func getUserHomeDir() string {
   return os.Getenv("USERPROFILE")
 }
 </code></pre>
+
+						<aside class="notes">
+							That's all go needs to do it's magic<br/>
+							windows differences and quirks
+						</aside>
 					</section>
 				</section>
 
@@ -222,6 +240,7 @@ func getUserHomeDir() string {
 					<img src="images/pyramid-ux.png" alt="1. cross-platform code, 2. user experience, 3. contributors, 4. ci" height="400px" />
 
 					<aside class="notes">
+						trouble to write it, make sure it doesn't suck on windows
 					</aside>
 				</section>
 
@@ -232,6 +251,8 @@ func getUserHomeDir() string {
 						<img src="images/mlp-doc-salute.png" alt="My Little Ponies: Salute to Documentation" />
 
 						<aside class="notes">
+							Say you want to support Windows!<br/>
+							Doc for other platforms should cover:<br/>
 							* Installation<br/>
 							* Usage<br/>
 							* Contributing<br/>
@@ -259,6 +280,11 @@ $ curl -sL https://example.com/install-magic.sh | sh
 <pre><code class="powershell" data-trim data-noescape>
 > iwr https://example.com/install-magic.ps1 -UseBasicParsing | iex
 </code></pre>
+
+						<aside class="notes">
+							Most is the same, except command samples<br/>
+							My preferred layout for documenting commands
+						</aside>
 					</section>
 
 					<section id="shells">
@@ -295,6 +321,11 @@ $ curl -sL https://example.com/install-magic.sh | sh
 
 						<p>Perhaps you like to live dangerously?</p>
 						<p><code class="inline">iwr https://example.com/install-magic.ps1 -UseBasicParsing | iex</code></p>
+
+						<aside class="notes">
+							installer > go install<br/>
+							explain powershell commands
+						</aside>
 					</section>
 
 					<section id="choco">
@@ -327,6 +358,11 @@ $ curl -sL https://example.com/install-magic.sh | sh
 🎵 Oh oh it's magic! 🎵
 </code></pre>
 
+						<aside class="notes">
+							No arcane tooling required<br/>
+							Use a test package feed until ready<br/>
+							No path mangling necessary with choco<br/>
+						</aside>
 					</section>
 
 					<section id="install-script">
@@ -346,16 +382,29 @@ iwr -uri https://example.com/magic.exe -outfile $installDir
 echo 'Magic is now installed!'
 echo 'Add it to your path by running $env:PATH += ";" + $installDir'
 </code></pre>
+
+						<aside class="notes">
+							script for those without choco<br/>
+							aren't intersted in package moderation
+						</aside>
 					</section>
 				</section>
 
 				<section id="contrib">
 					<h2>Contributors</h2>
 					<img src="images/pyramid-contrib.png" alt="1. cross-platform code, 2. user experience, 3. contributors, 4. ci" height="400px" />
+
+					<aside class="notes">
+						make life easier for us and brave souls
+					</aside>
 				</section>
 
 				<section id="build">
 					<img src="images/build-of-dreams.png" alt="If they can build it, they will come" />
+
+					<aside class="notes">
+						Must be able to build on windows
+					</aside>
 				</section>
 
 				<section>
@@ -365,6 +414,7 @@ echo 'Add it to your path by running $env:PATH += ";" + $installDir'
 						<p>Never more than a <br/><code class="inline">git clone</code> + <code class="inline">[make][./build.sh]</code><br/> away from success</p>
 
 						<aside class="notes">
+							Handle everything except the scripting language and go
 						</aside>
 					</section>
 
@@ -377,7 +427,10 @@ echo 'Add it to your path by running $env:PATH += ";" + $installDir'
 						</figure>
 
 						<aside class="notes">
-							How do devs end up with lolnix?
+							Wait? bash and make on windows?!<br/>
+							lolnix definition, bash, sed awk, grep<br/>
+							where to get it<br/>
+							my favorite -> sdk<br/>
 						</aside>
 					</section>
 
@@ -401,6 +454,12 @@ darwin: $(GOFILES) get-deps
 windows: $(GOFILES) get-deps
 	GOOS=windows GOARCH=amd64 go build -o bin/Windows/x86_64/magic.exe
 </pre></code>
+
+						<aside class="notes">
+							Gets dependency mgr<br/>
+							targets for each platform<br/>
+							mega build
+						</aside>
 					</section>
 
 					<section id="Bash">
@@ -419,11 +478,12 @@ GOOS=linux GOARCH=amd64 go build -o bin/Linux/x86_64/magic
 GOOS=darwin GOARCH=amd64 go build -o bin/Darwin/x86_64/magic
 GOOS=windows GOARCH=amd64 go build -o bin/Windows/x86_64/magic.exe
 </code></pre>
-					</section>
 
-					<aside class="notes">
-						bash is different between lolnix and *nix
-					</aside>
+						<aside class="notes">
+							Does everything from the mega build<br/>
+							bash is different between lolnix and *nix
+						</aside>
+					</section>
 				</section>
 
 				<section id="ci">
@@ -431,10 +491,9 @@ GOOS=windows GOARCH=amd64 go build -o bin/Windows/x86_64/magic.exe
 					<img src="images/pyramid-ci.png" alt="1. cross-platform code, 2. user experience, 3. contributors, 4. ci" height="400px" />
 
 					<aside class="notes">
-						* Not really optional these days, but...<br/>
-						* Contributor confidence<br/>
-						* Less likely to break something on other platforms<br/>
-						* Simply good form
+						Last but not least<br/>
+						Did all this work, so the automation is easy<br/>
+						Tests windev works for you, every commit
 					</aside>
 				</section>
 
@@ -452,12 +511,24 @@ GOOS=windows GOARCH=amd64 go build -o bin/Windows/x86_64/magic.exe
 								<td style="text-align: center" class="fragment" data-fragment-index=1>MyGet</td>
 							</tr>
 						</table>
+
+						<aside class="notes">
+							Windows build agents<br/>
+							Working with MyGet team<br/>
+							Compare services
+						</aside>
 					</section>
 
 					<section id="appveyor-ui"
 						data-background-image="images/appveyor-screenshot.png"
 						data-background-size="contain">
 						<p>&nbsp;</p>
+
+						<aside class="notes">
+							Build in UI, export to yaml<br/>
+							Looks like travis<br/>
+							Has a private test feed for packages
+						</aside>
 					</section>
 
 					<section id="appveyor-cfg">
@@ -477,12 +548,24 @@ build_script:
 
     installer\publish.ps1 -version $env:APPVEYOR_BUILD_VERSION -apikey $env:CHOCO_APIKEY
 </code></pre>
+
+						<aside class="notes">
+							Go setup steps<br/>
+							key encryption<br/>
+							same script as dev machine<br/>
+							choco pack/push
+						</aside>
 					</section>
 
 					<section id="myget-ui"
 						data-background-image="images/myget-screenshot.png"
 						data-background-size="contain">
 						<p>&nbsp;</p>
+
+						<aside class="notes">
+							Look for "Build Services"<br/>
+							Not everything is in the build script, e.g. env vars
+						</aside>
 					</section>
 
 					<section id="myget-cfg">
@@ -507,7 +590,9 @@ installer\publish.ps1 -version $env:PackageVersion -apikey $env:CHOCO_APIKEY
 </code></pre>
 
 						<aside class="notes">
-							* myget feeds vs. chocolatey
+							Move code to gopath<br/>
+							Move bash.exe to where it is on most dev machiens<br/>
+							MAKE!!!!!
 						</aside>
 					</section>
 				</section>
@@ -517,7 +602,7 @@ installer\publish.ps1 -version $env:PackageVersion -apikey $env:CHOCO_APIKEY
 
 					<aside class="notes">
 						So what have we done today? <br/>
-						* Decided to embrace our Windows users</br>
+						* Decided to embrace incoming Windows users</br>
 						* Realized that Go does all the hard work<br/>
 						* Covered common areas where Windows is different<br/>
 						* Lure Windows contributors to your project<br/>
@@ -549,6 +634,11 @@ installer\publish.ps1 -version $env:PackageVersion -apikey $env:CHOCO_APIKEY
 					<p><a href="http://twitter.com/carolynvs" target="_blank">@carolynvs</a></p>
 					<p><a href="http://carolynvanslyck.com/talk/devex/gowin">http://carolynvanslyck.com/talk/devex/gowin</a></p>
 					<!--<p>Post - <a href="http://carolynvanslyck.com/blog/2016/07/gowin">http://carolynvanslyck.com/blog/2016/07/gowin</a></p>-->
+
+					<aside class="notes">
+						Tell me about your tips and tricks!<br/>
+						Go out and if you already support windows, fill in the gaps</br>
+					</aside>
 				</section>
 			</div>
 
