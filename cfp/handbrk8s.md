@@ -5,15 +5,15 @@ DIY Home Netflix
 Are you looking for an excuse to try Kubernetes? How about converting your DVD collection into a DIY Home Netflix! If you have at least one computer lying around, you have enough horsepower to build a Kubernetes cluster and put it to good use.
 
 Starting from only a basic understanding of Kubernetes, learn how to:
-* Build out a Kubernetes cluster at home
-* Transcode discs into a digital format using HandBrake
-* Install HandBrk8s on your cluster to transcode multiple videos at once
-* Watch your movies from your TV, just like Netflix
+* Build out a Kubernetes cluster at home.
+* Transcode DVDs into a digital format using HandBrake.
+* Install HandBrk8s on your cluster to transcode multiple videos at once.
+* Watch your movies from your TV, just like Netflix!
 
 The payoff? Never having to get off the couch to put in a disc ever again.
 
 # Misc
-Carolyn is the author of HandBrk8s, HandBrake on Kubernetes, and is also the proud owner of her very own My Little Pony cluster which has taken over her guest bedroom. She will walk through how HandBrk8s takes advantage of Kubernetes to simplify resiliantly transcoding DVDs on a cluster.
+Carolyn is the author of HandBrk8s, HandBrake on Kubernetes, and is also the proud owner of her very own My Little Pony cluster which has taken over her guest bedroom. She will walk through how HandBrk8s takes advantage of Kubernetes to simplify resiliently transcoding DVDs on a cluster.
 
 # Outline
 handbrk8s
