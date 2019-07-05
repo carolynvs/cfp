@@ -22,7 +22,7 @@ look like if you were using them.
 
 ## Notes (1500)
 Cloud Native Application Bundles, CNAB, is a specification recently submitted to
-the Joint Development Foundation under the Linux Foundation that co-developed by
+the Joint Development Foundation under the Linux Foundation, co-developed by
 Microsoft, Pivotal, Docker, Bitnami and Hashicorp. There are several open-source
 tools and libraries such as duffle, porter, docker app and cnab-go that
 implement the CNAB spec.
