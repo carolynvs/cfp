@@ -2,14 +2,22 @@
 What are Cloud Native Application Bundles and when would you use them?
 
 ## Description (900)
-Cloud Native Application Bundles (CNAB) is a specification designed to help
-solve some sticky problems that we all have been quietly solving in the cloud
-native sphere, mostly with hope and bash. Before jumping into learning and using
-CNAB, we need to think about what those problems are, admit how we are dealing
-with them today (or aren't!), and get a feel for how bundles could solve them in
-better ways.
+Cloud Native Application Bundles (CNAB) is designed to solve some sticky
+problems that we all have been quietly solving in the cloud native sphere,
+mostly with hope and bash.
 
-Lets learn when bundles make sense, when they don't, and what your day could
+Before we jump into learning CNAB, we should understand what those problems are,
+how we are dealing with them today, and how bundles can solve them in better
+ways:
+
+* Install the tools to manage your app: helm, aws/azure/gcloud, python, terraform, etc
+* Deploy an application along with its infrastructure: cloud storage, dns entry, 
+  load balancer, ssl certificate, etc
+* Get software and its dependencies into airgapped networks or offline
+* Manage disparate operational tech, such as Chef, Terraform, CloudFormations,
+  etc, across teams and departments without forcing standardizing
+
+Let's learn when bundles make sense, when they don't, and what your day could
 look like if you were using them.
 
 ## Notes (1500)
@@ -20,23 +28,16 @@ tools and libraries such as duffle, porter, docker app and cnab-go that
 implement the CNAB spec.
 
 Instead of diving into the details of the spec, or how to use one of these
-tools, let's stop and consider what problems bundles can solve and when they
-won't help. 
+tools, I want to help people understand the types of problems CNAB solves, and
+what it would look like before and after bundles were introduced into their
+stack. The goal is for people to leave with an understanding of what CNAB is,
+when bundles are the right tool for the job (and when they aren't), and hopefully
+thinking about learning more about making and using bundles.
 
-We will look at what tasks and glue scripts we are using today to tackle each of
-these scenarios, what it looks like now and what the solution would look like
-with bundles involved. Not just on day one with a happy path installation, but
-also what it would look like after it's been in production for a while and we
-need to upgrade a single component or rollback a buggy version of software.
-
-* Version management shell game for the client tools, languages, etc required on
-  the box executing installation scripts, e.g. getting the right version of
-  helm, kubectl or python before you can run them to install your app
-* Deploy an application along with its necessary infrastructure: cloud storage,
-  dns entry, load balancer, ssl certificate.
-* Get software and its dependencies into airgapped networks or offline
-* Manage disparate operational tech, such as Chef, Terraform, CloudFormations,
-  etc, across teams and departments without forcing standardizing.
+CNAB is relevant to CloudNativeCon because it is a specification designed to 
+operate cloud native applications, agnostic of any particular cloud or tooling.
+It can be used to manage cloud infrastructure, a kubernetes cluster, cloud native
+applications, and works well with tooling like Helm, Terraform, etc.
 
 ## Bio (600)
 Carolyn is a software developer based in the wilds of suburban Chicago, working
