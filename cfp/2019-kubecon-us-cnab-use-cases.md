@@ -2,7 +2,7 @@
 What are Cloud Native Application Bundles and when would you use them?
 
 ## Description (900)
-Cloud Native Application Bundles (CNAB) is designed to solve some sticky
+Cloud Native Application Bundles (CNAB) are designed to solve some sticky
 problems that we all have been quietly solving in the cloud native sphere,
 mostly with hope and bash.
 
