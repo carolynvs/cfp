@@ -31,8 +31,8 @@ Instead of diving into the details of the spec, or how to use one of these
 tools, I want to help people understand the types of problems CNAB solves, and
 what it would look like before and after bundles were introduced into their
 stack. The goal is for people to leave with an understanding of what CNAB is,
-when bundles are the right tool for the job (and when they aren't), and hopefully
-thinking about learning more about making and using bundles.
+when bundles are the right tool for the job, when they aren't, and inspire
+people to learn more about making and using bundles.
 
 CNAB is relevant to CloudNativeCon because it is a specification designed to 
 operate cloud native applications, agnostic of any particular cloud or tooling.
