@@ -1,5 +1,5 @@
 # Title (75)
-Cloud Native Applications are more than just Kubernetes, deal with it!
+Cloud Native Applications Are More Than Just Kubernetes, Deal With It!
 
 ## Description (900)
 Can you deploy your entire app from scratch with a Helm install? Or do you
