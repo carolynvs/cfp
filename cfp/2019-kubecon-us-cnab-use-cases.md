@@ -1,24 +1,23 @@
 # Title (75)
-What are Cloud Native Application Bundles and when would you use them?
+Cloud Native Applications are more than just Kubernetes, deal with it!
 
 ## Description (900)
-Cloud Native Application Bundles (CNAB) are designed to solve some sticky
-problems that we all have been quietly solving in the cloud native sphere,
-mostly with hope and bash.
+Can you deploy your entire app from scratch with a Helm install? Or do you
+have cloud infra and hosted services that you rely on? The cloudy bits that make
+your app cloud native.
 
-Before we jump into learning CNAB, we should understand what those problems are,
-how we are dealing with them today, and how bundles can solve them in better
-ways:
-
-* Install the tools to manage your app: helm, aws/azure/gcloud, python, terraform, etc
-* Deploy an application along with its infrastructure: cloud storage, dns entry, 
-  load balancer, ssl certificate, etc
-* Get software and its dependencies into airgapped networks or offline
-* Manage disparate operational tech, such as Chef, Terraform, CloudFormations,
-  etc, across teams and departments without forcing standardizing
+Cloud Native Application Bundles, the jointly developed CNAB spec, was designed
+to solve deployment problems that we all have been quietly solving, mostly with
+hope and bash. CNAB comes in handy when dealing with applications that don't
+live neatly inside of just Kubernetes.
 
 Let's learn when bundles make sense, when they don't, and what your day could
-look like if you were using them.
+look like if you were using them:
+
+* Install the tools to manage your app: helm, aws/azure/gcloud, terraform
+* Deploy an app along with its infra: cloud storage, dns entry, load balancer, ssl cert
+* Get software and its dependencies into airgapped networks
+* Manage disparate operational tech, such as Chef, Terraform, CloudFormations, across teams and departments
 
 ## Notes (1500)
 Cloud Native Application Bundles, CNAB, is a specification recently submitted to
@@ -48,3 +47,8 @@ Bundles.
 
 In between code reviews, Carolyn enjoys hauling her cookies around the world to
 share her love of open-source, containers, and excessive emoji. 🌈 ✨
+
+### Outline
+
+If you can deploy your cloud native app without any cloud infrastructure
+or hosted services, is it really cloud native? 😂
