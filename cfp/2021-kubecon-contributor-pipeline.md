@@ -12,3 +12,20 @@ Would you like to attract new contributors to your project and grow your contrib
 * Find a balance between your time commitments as a maintainer and helping new contributors. 
 
 Whether you are a new sandbox project or an established graduated projects like Kubernetes, you will come away with a realistic actionable way to sustainably grow your community.
+
+# Comments
+
+In case the formatting doesn't survive, here is the link to our proposal: https://github.com/carolynvs/cfp/blob/main/cfp/2021-kubecon-contributor-pipeline.md
+
+The most common question SIG Contributor Strategy receives from project maintainers is "How do I get more contributors?" Over the past year we have developed templates and advisory guides to help address this need.
+
+* Contributing Guide Template - https://github.com/cncf/project-template/blob/main/CONTRIBUTING.md
+* Issue Labels for New Contributors - https://github.com/cncf/sig-contributor-strategy/blob/master/contributor-growth/docs/issue-labels.md
+* Contributor Ladder (in-progress) - https://hackmd.io/KBwWdIP3QEOhW68YKcP0NA?view
+* Onboarding Tutorial (example) - https://porter.sh/contribute/tutorial/
+
+We will:
+* Share key points from the documents.
+* Encourage projects to tailor them to their project, for example every project has different roles on their contributor ladder.
+* Share our experience with how these processes and docs worked on various projects.
+* Discuss how to take on these extra activities without it feeling like too much on top of everything maintainers do.
